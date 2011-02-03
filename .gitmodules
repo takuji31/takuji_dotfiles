@@ -1,0 +1,21 @@
+[submodule "vim/bundle/zencoding"]
+	path = vim/bundle/zencoding
+	url = git://github.com/mattn/zencoding-vim.git
+[submodule "vim/bundle/unite"]
+	path = vim/bundle/unite
+	url = git://github.com/Shougo/unite.vim.git
+[submodule "vim/bundle/ref"]
+	path = vim/bundle/ref
+	url = git://github.com/thinca/vim-ref.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/perlomni"]
+	path = vim/bundle/perlomni
+	url = git://github.com/c9s/perlomni.vim.git
+[submodule "vim/bundle/neocomplcache"]
+	path = vim/bundle/neocomplcache
+	url = git://github.com/Shougo/neocomplcache.git
+[submodule "vim/bundle/xslate-vim"]
+	path = vim/bundle/xslate-vim
+	url = git://github.com/motemen/xslate-vim.git

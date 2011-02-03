@@ -1,0 +1,41 @@
+# 独自パッチを保持しつづけるのもしんどいので
+# 管理下じゃないファイル1つのデフォルトで読むようにする
+source "$HOME/.zshrc_custom" 
+export MYZSHRC="$0"
+export ZSH_CONFIG_DIR="$HOME/project/takuji_dotfiles/zsh"
+fpath=(~/project/takuji_dotfiles/zsh/functions ${fpath})
+
+
+source "$ZSH_CONFIG_DIR/zshopt.zshrc"
+source "$ZSH_CONFIG_DIR/hook.zshrc"
+
+source "$ZSH_CONFIG_DIR/env.zshrc"
+source "$ZSH_CONFIG_DIR/alias.zshrc"
+source "$ZSH_CONFIG_DIR/function.zshrc"
+#git completion
+#autoload bashcompinit
+#bashcompinit
+#source $HOME/project/takuji_dotfiles/zsh/git-completion.bash
+
+
+if test ! $MF_DEV
+then
+    #TODO ちょっとパス周り見直しすべき
+    #export PATH="$HOME/project/cake/cake/console:$PATH"
+    #alias bakeproject='cake bake project -skel /home/takuji/project/cake/plugins/senchan/vendors/shells/templates/skel/'
+    export MODULEBUILDRC="$HOME/project/CPAN/.modulebuildrc"
+    export PERL_MM_OPT="INSTALL_BASE=$HOME/project/CPAN/"
+    PERL_ARCH=${PERL_ARCH:-$(perl -MConfig -e 'print $Config{archname}')}
+    LOCAL_PERL5LIB="$HOME/project/Dev/lib:$HOME/project/CPAN/lib/perl5:$HOME/project/CPAN/lib/perl5/$PERL_ARCH:$HOME/project/CPAN/lib/"
+    PERL5LIB=${PERL5LIB//$LOCAL_PERL5LIB:/}
+    export PERL5LIB="$LOCAL_PERL5LIB:$PERL5LIB"
+
+    LOCAL_PERLBIN="$HOME/project/Dev/bin:$HOME/project/CPAN/bin"
+    PATH=${PATH//$LOCAL_PERLBIN:/}
+    export PATH="$LOCAL_PERLBIN:$PATH"
+    export PATH="/sbin:$PATH"
+    export PERL_CPANM_OPT="--local-lib=$HOME/project/CPAN/"
+fi
+# git拡張
+export PATH="$HOME/project/takuji_dotfiles/git/bin/:$PATH"
+stty stop undef >& /dev/null

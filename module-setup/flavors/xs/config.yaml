@@ -1,0 +1,9 @@
+---
+author: Keiji Yoshimi
+class: Module::Setup::Flavor::XS
+email: walf443 at gmail dot com
+plugins:
+  - Config::Basic
+  - Template
+  - Additional
+  - VC::Git

@@ -1,0 +1,270 @@
+" pathogen
+call pathogen#runtime_append_all_bundles()
+" autocmd
+autocmd!
+
+" set bufname to screen's title
+autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | silent! exe printf('!echo -n "\ek%%:t[%d]\e\\"', winnr("$")) | endif
+
+filetype plugin indent on
+syntax enable
+
+" option
+set ambiwidth=double
+set autoindent
+"set paste
+"set background=dark
+set t_Co=256
+"colorscheme colorful256
+colorscheme wombat256
+set backspace=eol,indent,start
+set cindent
+set expandtab
+" set ignorecase
+set incsearch
+set list
+set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
+set shiftwidth=4
+set showmatch
+set showmode
+set smartcase
+set tabstop=4
+set splitright
+
+" encoding
+set fileencoding=utf-8
+set fileencodings=utf-8,iso-2022-jp,euc-jp,cp932
+set fileformats=unix,mac,dos
+set encoding=utf-8
+
+" statusline
+set statusline=%<%f\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%4v\ %l/%L
+set laststatus=2
+
+" mapping
+nnoremap <Leader>ev  <C-w>s:<C-u>edit $MYVIMRC<Enter>
+nnoremap <Leader>ez  <C-w>s:<C-u>edit $MYZSHRC<Enter>
+nnoremap <Leader>ec  <C-w>s:<C-u>edit $MYCHANGELOG_MEMO<Enter>
+nnoremap <Leader>s. :<C-u>source $MYVIMRC<Enter>
+nnoremap <Leader>ex  :execute '!' &ft ' %'<Enter>
+
+cnoremap <expr> /  getcmdtype() == '/' ? '\/' : '/'
+cnoremap <expr> ?  getcmdtype() == '?' ? '\?' : '?'
+
+" jump and move centor
+nnoremap n  nzz
+nnoremap N  Nzz
+
+" motion
+noremap j gj
+noremap k gk
+noremap gj j
+noremap gk k
+inoremap <C-A>  <ESC>^i
+noremap <C-E>   <END>
+inoremap <C-E>  <END>
+
+inoremap <expr> ,df  strftime('%Y-%m-%d %H:%M:%S')
+inoremap <expr> ,dd  strftime('%Y-%m-%d')
+inoremap <expr> ,dt  strftime('%H:%M:%S')
+
+nnoremap gc `[v`]
+vnoremap gc :<C-u>normal gc<Enter>
+onoremap gc :<C-u>normal gc<Enter>
+
+"perlomni.vim
+inoremap <C-p> <C-x><C-o>
+
+noremap ; :
+
+"NERDTree
+cabbrev nt NERDTree
+cabbrev ng NERDTreeToggle
+
+" Ex Command
+command! Cp932      edit ++enc=cp932
+command! Eucjp      edit ++enc=euc-jp
+command! Iso2022jp  edit ++enc=iso-2022-jp
+command! Utf8       edit ++enc=utf8
+
+command! Jis        Iso2022jp
+command! Sjis       cp932
+
+" カーソル下の文字も消す
+func! Eatchar(pat)
+  let c = nr2char(getchar(0))
+  return (c =~ a:pat) ? '' : c
+endfunc
+
+" for ftplugin/changelog.vim
+let g:changelog_timeformat = "%Y-%m-%d %H:%M:%S"
+let g:changelog_username = "Nishibayashi Takuji"
+
+" 対応する括弧の強調表示はウザいので消す
+let loaded_matchparen = 1
+
+let g:ref_phpmanual_path = $HOME . "/project/takuji_dotfiles/vim/ref/php_manual_ja_html/"
+
+"" -------------------------------------------------------------------------
+"" Perlの構文チェックを ,make で出来るように設定
+""
+"" -------------------------------------------------------------------------
+setlocal makeprg=perl\ -wc\ %
+setlocal errorformat=%m\ at\ %f\ line\ %l%.
+map ,make :w<ENTER> :make<ENTER>
+
+" -------------------------------------------------------------------------
+" Perltidy
+" -------------------------------------------------------------------------
+map ,pt <Esc>:%! perltidy<CR>
+map ,ptv <Esc>:'<,'>! perltidy<CR>
+
+
+
+" -------------------------------------------------------------------------
+" 入力補完
+"
+" -------------------------------------------------------------------------
+iabbrev ,# # =========================================================================
+iabbrev ## # -------------------------------------------------------------------------
+let g:ref_alc_cmd = 'w3m -dump %s'
+call ref#register_detection('_', 'alc')
+
+source $VIMRUNTIME/macros/matchit.vim
+
+let g:user_zen_settings = {
+            \    'indentation' : '  ',
+            \    'lang' : 'ja',
+            \    'php' : {
+            \        'extends' : 'html',
+            \    },
+            \    'tt2html' : {
+            \        'extends' : 'html',
+            \    },
+            \    'tmt2html' : {
+            \        'extends' : 'html',
+            \    },
+            \}
+"let g:user_zen_expandabbr_key = '<c-e>'
+
+
+"要らないファイルは表示しない
+let NERDTreeIgnore=['\~$', '\.swp$', '\.bak$']
+
+autocmd BufNewFile,BufRead *.ctp set filetype=php
+
+"colorschemeのパッチ
+if g:colors_name ==? 'wombat'
+    hi Visual gui=none guifg=khaki guibg=olivedrab
+endif
+
+
+let g:git_no_map_default = 1
+let g:git_command_edit = 'rightbelow vnew'
+nnoremap <leader>gd :<C-u>GitDiff --cached<Enter>
+nnoremap <leader>gD :<C-u>GitDiff<Enter>
+nnoremap <leader>gs :<C-u>GitStatus<Enter>
+nnoremap <leader>gl :<C-u>GitLog<Enter>
+nnoremap <leader>gL :<C-u>GitLog -u \| head -10000<Enter>
+nnoremap <leader>ga :<C-u>GitAdd<Enter>
+nnoremap <leader>gA :<C-u>GitAdd <cfile><Enter>
+nnoremap <leader>gc :<C-u>GitCommit<Enter>
+nnoremap <leader>gC :<C-u>GitCommit --amend<Enter>
+nnoremap <leader>gp :<C-u>Git push
+nnoremap <leader>gP :<C-u>Git pull
+
+" unite.vim
+noremap [unite]  <Nop>
+map     <C-c>    [unite]
+noremap <silent> [unite]f  :<C-u>Unite -buffer-name=files -prompt=%\  file_mru file_rec bookmark buffer_tab<CR>
+noremap <silent> [unite]b  :<C-u>Unite -buffer-name=files -prompt=%\  buffer_tab file_mru bookmark file_rec<CR>
+let g:unite_source_file_mru_limit = 200
+
+" neocomplcache
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Use camel case completion.
+let g:neocomplcache_enable_camel_case_completion = 1
+" Use underbar completion.
+let g:neocomplcache_enable_underbar_completion = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
+" Define dictionary.
+let g:neocomplcache_dictionary_filetype_lists = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
+    
+" Define keyword.
+if !exists('g:neocomplcache_keyword_patterns')
+    let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neocomplcache_snippets_expand)
+smap <C-k>     <Plug>(neocomplcache_snippets_expand)
+inoremap <expr><C-g>     neocomplcache#undo_completion()
+inoremap <expr><C-l>     neocomplcache#complete_common_string()
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
+
+" AutoComplPop like behavior.
+"let g:neocomplcache_enable_auto_select = 1
+
+" Shell like behavior(not recommended).
+"set completeopt+=longest
+"let g:neocomplcache_enable_auto_select = 1
+"let g:neocomplcache_disable_auto_complete = 1
+"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<TAB>"
+"inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplcache_omni_patterns')
+    let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns = {
+            \ 'php'  :  '[^. \t]->\h\w*\|\$\h\w*\|\%(=\s*new\|extends\)\s\+\|\h\w*::',
+            \ 'perl' :  '\%(\h\w*\|)\)->\h\w*\|\h\w*::',
+            \ 'c'    :  '\h\w\+\|\%(\h\w*\|)\)\%(\.\|->\)\h\w*',
+            \ 'cpp'  :  '\%(\h\w*\|)\)\%(\.\|->\)\h\w*\|\h\w*::',
+            \ }
+
+
+
+"カッコ閉じるのメンドクセ
+"inoremap { {}<LEFT>
+"inoremap [ []<LEFT>
+"inoremap ( ()<LEFT>
+"inoremap " ""<LEFT>
+"inoremap ' ''<LEFT>
+"vnoremap { "zdi^V{<C-R>z}<ESC>
+"vnoremap [ "zdi^V[<C-R>z]<ESC>
+"vnoremap ( "zdi^V(<C-R>z)<ESC>
+"vnoremap " "zdi^V"<C-R>z^V"<ESC>
+"vnoremap ' "zdi'<C-R>z'<ESC>
+
+
