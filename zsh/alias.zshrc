@@ -27,3 +27,4 @@ alias tv="tmux new-window vim "
 alias vi="vim"
 alias q="exit"
 alias sudo="sudo "
+alias zmv='noglob zmv -W'

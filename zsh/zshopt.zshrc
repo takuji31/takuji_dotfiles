@@ -23,6 +23,7 @@ autoload -U colors
 colors
 autoload -Uz compinit
 compinit
+autoload -Uz zmv
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*:default' menu select=1
