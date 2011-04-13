@@ -1,7 +1,6 @@
 ---
 author: Nishibayashi Takuji
-class: Module::Setup::Flavor::Default
-email: 'takuji {at} senchan.jp'
+email: 'takuji at senchan.jp'
 plugins:
   - Config::Basic
   - Template
