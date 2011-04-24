@@ -1,10 +1,28 @@
-" pathogen
-call pathogen#runtime_append_all_bundles()
 " autocmd
 autocmd!
 
 " set bufname to screen's title
 autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | silent! exe printf('!echo -n "\ek%%:t[%d]\e\\"', winnr("$")) | endif
+
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+set rtp+=~/.vim/vundle.git/ 
+call vundle#rc()
+
+" My Bundles here:
+"
+" original repos on github
+"Bundle 'tpope/vim-fugitive'
+"Bundle 'lokaltog/vim-easymotion'
+"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"" vim-scripts repos
+"Bundle 'L9'
+"Bundle 'FuzzyFinder'
+"Bundle 'rails.vim'
+"" non github repos
+"Bundle 'git://git.wincent.com/command-t.git'
+"" ...
 
 filetype plugin indent on
 syntax enable
