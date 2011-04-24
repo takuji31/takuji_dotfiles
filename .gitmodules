@@ -19,3 +19,6 @@
 [submodule "vim/bundle/xslate-vim"]
 	path = vim/bundle/xslate-vim
 	url = git://github.com/motemen/xslate-vim.git
+[submodule "vim/vundle.git"]
+	path = vim/vundle.git
+	url = git://github.com/gmarik/vundle.git
