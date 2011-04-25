@@ -25,13 +25,19 @@ call vundle#rc()
 "" ...
 Bundle 'ref.vim'
 Bundle 'The-NERD-tree'
-Bundle 'unite.vim'
 Bundle 'neocomplcache'
 Bundle 'perlomni.vim'
-Bundle 'Highlight-UnMatched-Brackets'
 Bundle 'ZenCoding.vim'
+Bundle 'YankRing.vim'
+Bundle 'Gundo'
+Bundle 'unite-colorscheme'
 
+Bundle 'git://github.com/Shougo/unite.vim.git'
 Bundle 'git://github.com/motemen/xslate-vim.git'
+Bundle 'git://github.com/sgur/unite-git_grep'
+Bundle 'git://github.com/Sixeight/unite-grep'
+Bundle 'git://github.com/h1mesuke/unite-outline'
+Bundle 'git://github.com/tsukkee/unite-help'
 
 filetype plugin indent on
 syntax enable
@@ -202,9 +208,15 @@ nnoremap <leader>gP :<C-u>Git pull
 
 " unite.vim
 noremap [unite]  <Nop>
-map     <C-c>    [unite]
-noremap <silent> [unite]f  :<C-u>Unite -buffer-name=files -prompt=%\  file_mru file_rec bookmark buffer_tab<CR>
-noremap <silent> [unite]b  :<C-u>Unite -buffer-name=files -prompt=%\  buffer_tab file_mru bookmark file_rec<CR>
+map     f        [unite]
+nnoremap <silent> [unite]f  :<C-u>Unite -buffer-name=files file_mru file_rec bookmark buffer_tab<CR>
+nnoremap <silent> [unite]b  :<C-u>Unite -buffer-name=files buffer_tab file_mru<CR>
+nnoremap <silent> [unite]t  :<C-u>Unite -buffer-name=files tab buffer file_mru<CR>
+nnoremap <silent> [unite]r  :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> [unite]o  :<C-u>Unite -buffer-name=files outline buffer_tab file_mru<CR>
+nnoremap <silent> [unite]p  :<C-u>Unite -buffer-name=perldoc ref/perldoc<CR>
+nnoremap <silent> [unite]s  :<C-u>Unite -buffer-name=source   source<CR>
+
 let g:unite_source_file_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(o|exe|dll|bak|sw[po]\)$\|\%(^\|/\)blib\%($\|/\)'
 let g:unite_source_file_rec_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(o|exe|dll|bak|sw[po]\)$\|\%(^\|/\)blib\%($\|/\)\|\%(^\|/\)blib\%($\|/\)'
 let g:unite_source_file_mru_ignore_pattern = '\~$\|\.\%(o|exe|dll|bak|sw[po]\)$\|\%(^\|/\)\.\%(hg\|git\|bzr\|svn\)\%($\|/\)\|^\%(\\\\\|/mnt/\|/media/\|/Volumes/\)\|\%(^\|/\)blib\%($\|/\)'
