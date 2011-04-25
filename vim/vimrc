@@ -219,13 +219,13 @@ nnoremap <silent> [unite]s  :<C-u>Unite -buffer-name=source   source<CR>
 
 "fが食われてるプラグイン（NERDTreeなど）対策
 map     <C-f>    [unite_c]
-nnoremap <silent> [unite_c]f  :<C-u>Unite -buffer-name=files file_mru file_rec bookmark buffer_tab<CR>
-nnoremap <silent> [unite_c]b  :<C-u>Unite -buffer-name=files buffer_tab file_mru<CR>
-nnoremap <silent> [unite_c]t  :<C-u>Unite -buffer-name=files tab buffer file_mru<CR>
-nnoremap <silent> [unite_c]r  :<C-u>Unite -buffer-name=register register<CR>
-nnoremap <silent> [unite_c]o  :<C-u>Unite -buffer-name=files outline buffer_tab file_mru<CR>
-nnoremap <silent> [unite_c]p  :<C-u>Unite -buffer-name=perldoc ref/perldoc<CR>
-nnoremap <silent> [unite_c]s  :<C-u>Unite -buffer-name=source   source<CR>
+nnoremap <silent> [unite_c]<C-f>  :<C-u>Unite -buffer-name=files file_mru file_rec bookmark buffer_tab<CR>
+nnoremap <silent> [unite_c]<C-b>  :<C-u>Unite -buffer-name=files buffer_tab file_mru<CR>
+nnoremap <silent> [unite_c]<C-t>  :<C-u>Unite -buffer-name=files tab buffer file_mru<CR>
+nnoremap <silent> [unite_c]<C-r>  :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> [unite_c]<C-o>  :<C-u>Unite -buffer-name=files outline buffer_tab file_mru<CR>
+nnoremap <silent> [unite_c]<C-p>  :<C-u>Unite -buffer-name=perldoc ref/perldoc<CR>
+nnoremap <silent> [unite_c]<C-s>  :<C-u>Unite -buffer-name=source   source<CR>
 
 let g:unite_source_file_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(o|exe|dll|bak|sw[po]\)$\|\%(^\|/\)blib\%($\|/\)'
 let g:unite_source_file_rec_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(o|exe|dll|bak|sw[po]\)$\|\%(^\|/\)blib\%($\|/\)\|\%(^\|/\)blib\%($\|/\)'
