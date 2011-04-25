@@ -23,6 +23,15 @@ call vundle#rc()
 "" non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
 "" ...
+Bundle 'ref.vim'
+Bundle 'The-NERD-tree'
+Bundle 'unite.vim'
+Bundle 'neocomplcache'
+Bundle 'perlomni.vim'
+Bundle 'Highlight-UnMatched-Brackets'
+Bundle 'ZenCoding.vim'
+
+Bundle 'git://github.com/motemen/xslate-vim.git'
 
 filetype plugin indent on
 syntax enable
