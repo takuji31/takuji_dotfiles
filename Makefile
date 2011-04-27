@@ -9,6 +9,7 @@ setup: $(HOME)/.zshenv \
 	   $(HOME)/.module-setup \
 	   $(HOME)/.tmux.conf\
 	   $(HOME)/.vrapperrc\
+	   $(HOME)/.hgrc\
 
 
 $(HOME)/.zshenv:
@@ -43,3 +44,6 @@ $(HOME)/.tmux.conf:
 
 $(HOME)/.vrapperrc:
 	ln -sf `pwd`/vrapper/vrapperrc $(HOME)/.vrapperrc
+
+$(HOME)/.hgrc:
+	ln -sf `pwd`/hg/hgrc $(HOME)/.hgrc

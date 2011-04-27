@@ -40,3 +40,6 @@ export SAVEHIST=1000000
 #  export PROMPT="%{[37m%}%n@${HOST%%.*}%# "
 #
 export PYTHONSTARTUP=$HOME/.pythonrc.py
+
+#Mercurial
+export HGENCODING=utf-8
