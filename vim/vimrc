@@ -37,12 +37,13 @@ Bundle 'neco-look'
 Bundle 'newspaper.vim'
 Bundle 'pyte'
 
-Bundle 'Shougo/unite.vim.git'
-Bundle 'motemen/xslate-vim.git'
+Bundle 'Shougo/unite.vim'
+Bundle 'motemen/xslate-vim'
 Bundle 'sgur/unite-git_grep'
 Bundle 'Sixeight/unite-grep'
 Bundle 'h1mesuke/unite-outline'
 Bundle 'tsukkee/unite-help'
+Bundle 'othree/html5.vim'
 
 filetype plugin indent on
 syntax enable
