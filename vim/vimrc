@@ -55,7 +55,8 @@ set autoindent
 "set background=dark
 set t_Co=256
 "colorscheme colorful256
-colorscheme wombat256
+"colorscheme wombat256
+colorscheme wombat256patched
 set backspace=eol,indent,start
 set cindent
 set expandtab
