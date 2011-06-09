@@ -36,6 +36,17 @@ then
     export PATH="/sbin:$PATH"
     export PERL_CPANM_OPT="--local-lib=$HOME/project/CPAN/"
 fi
+
+if test $MF_DEV
+then
+    #なんか実験的にモジュール入れたい時用
+    export PERL_CPANM_OPT="--local-lib=$HOME/perl5/"
+    LOCAL_PERLBIN="$HOME/perl5/bin"
+    PATH=${PATH//$LOCAL_PERLBIN:/}
+    export PATH="$LOCAL_PERLBIN:$PATH"
+    LOCAL_PERL5LIB="$HOME/perl5"
+    export PERL5LIB="$LOCAL_PERL5LIB:$PERL5LIB"
+fi
 # git拡張
 export PATH="$HOME/project/takuji_dotfiles/git/bin/:$PATH"
 stty stop undef >& /dev/null
