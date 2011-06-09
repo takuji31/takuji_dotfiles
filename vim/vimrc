@@ -237,8 +237,9 @@ nnoremap <silent> [unite_c]<C-h>  :<C-u>Unite -buffer-name=help help<CR>
 let g:unite_source_file_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(o|exe|dll|bak|sw[po]\)$\|\%(^\|/\)blib\%($\|/\)'
 let g:unite_source_file_rec_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(o|exe|dll|bak|sw[po]\)$\|\%(^\|/\)blib\%($\|/\)\|\%(^\|/\)blib\%($\|/\)'
 let g:unite_source_file_mru_ignore_pattern = '\~$\|\.\%(o|exe|dll|bak|sw[po]\)$\|\%(^\|/\)\.\%(hg\|git\|bzr\|svn\)\%($\|/\)\|^\%(\\\\\|/mnt/\|/media/\|/Volumes/\)\|\%(^\|/\)blib\%($\|/\)'
+
 let g:unite_source_file_mru_limit = 200
-let g:unite_source_file_rec_max_depth = 7
+let g:unite_source_file_rec_max_depth = 10
 let g:unite_enable_start_insert = 1
 
 " ウィンドウを分割して開く
@@ -248,8 +249,8 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-s> unite#do_action('split
 au FileType unite nnoremap <silent> <buffer> <expr> <C-v> unite#do_action('vsplit')
 au FileType unite inoremap <silent> <buffer> <expr> <C-v> unite#do_action('vsplit')
 " タブで開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-c> unite#do_action('tabopen')
-au FileType unite inoremap <silent> <buffer> <expr> <C-c> unite#do_action('tabopen')
+au FileType unite nnoremap <silent> <buffer> <expr> <C-b> unite#do_action('tabopen')
+au FileType unite inoremap <silent> <buffer> <expr> <C-b> unite#do_action('tabopen')
 
 "更に下のディレクトリーをたどる
 au FileType unite inoremap <silent> <buffer> <expr> <C-r> unite#do_action('rec')
@@ -263,7 +264,7 @@ let g:neocomplcache_enable_camel_case_completion = 1
 " Use underbar completion.
 let g:neocomplcache_enable_underbar_completion = 1
 " Set minimum syntax keyword length.
-let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_min_syntax_length = 2
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 " Define dictionary.
