@@ -1,9 +1,6 @@
 use inc::Module::Install;
-use Module::Install::ReadmeFromPod;
-use Module::Install::Repository;
 name '[% dist %]';
 all_from 'lib/[% module_path %].pm';
-readme_from 'lib/[% module_path %].pm';
 
 # requires '';
 
@@ -14,5 +11,4 @@ build_requires 'Test::More';
 build_requires 'Test::LoadAllModules';
 use_test_base;
 auto_include;
-auto_set_repository;
 WriteAll;
