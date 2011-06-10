@@ -25,8 +25,6 @@ call vundle#rc()
 "" ...
 Bundle 'ref.vim'
 Bundle 'The-NERD-tree'
-Bundle 'neocomplcache'
-Bundle 'perlomni.vim'
 Bundle 'YankRing.vim'
 Bundle 'Gundo'
 Bundle 'unite-colorscheme'
@@ -36,7 +34,9 @@ Bundle 'neco-look'
 Bundle 'newspaper.vim'
 Bundle 'pyte'
 
+"Bundle 'c9s/perlomni.vim'
 Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/neocomplcache'
 Bundle 'motemen/xslate-vim'
 Bundle 'sgur/unite-git_grep'
 Bundle 'Sixeight/unite-grep'
@@ -44,7 +44,7 @@ Bundle 'h1mesuke/unite-outline'
 Bundle 'tsukkee/unite-help'
 Bundle 'othree/html5.vim'
 Bundle 'mattn/zencoding-vim'
-Bundle  'groenewege/vim-less'
+Bundle 'groenewege/vim-less'
 
 filetype plugin indent on
 syntax enable
@@ -56,7 +56,8 @@ set autoindent
 "set background=dark
 set t_Co=256
 "colorscheme colorful256
-colorscheme wombat256
+"colorscheme wombat256
+colorscheme wombat256patched
 set backspace=eol,indent,start
 set cindent
 set expandtab
@@ -161,10 +162,6 @@ map ,ptv <Esc>:'<,'>! perltidy<CR>
 
 
 
-" -------------------------------------------------------------------------
-" 入力補完
-"
-" -------------------------------------------------------------------------
 let g:ref_alc_cmd = 'w3m -dump %s'
 call ref#register_detection('_', 'alc')
 
@@ -215,27 +212,35 @@ nnoremap <leader>gP :<C-u>Git pull
 noremap [unite]  <Nop>
 map     f        [unite]
 nnoremap <silent> [unite]f  :<C-u>Unite -buffer-name=files file_mru file_rec bookmark buffer_tab<CR>
+nnoremap <silent> [unite]d  :<C-u>UniteWithInputDirectory -buffer-name=files file_rec bookmark<CR>
+nnoremap <silent> [unite]g  :<C-u>Unite -buffer-name=files file_rec bookmark<CR>
 nnoremap <silent> [unite]b  :<C-u>Unite -buffer-name=files buffer_tab file_mru<CR>
 nnoremap <silent> [unite]t  :<C-u>Unite -buffer-name=files tab buffer file_mru<CR>
 nnoremap <silent> [unite]r  :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> [unite]o  :<C-u>Unite -buffer-name=files outline buffer_tab file_mru<CR>
 nnoremap <silent> [unite]p  :<C-u>Unite -buffer-name=perldoc ref/perldoc<CR>
 nnoremap <silent> [unite]s  :<C-u>Unite -buffer-name=source   source<CR>
+nnoremap <silent> [unite]h  :<C-u>Unite -buffer-name=help help<CR>
 
 "fが食われてるプラグイン（NERDTreeなど）対策
 map     <C-f>    [unite_c]
 nnoremap <silent> [unite_c]<C-f>  :<C-u>Unite -buffer-name=files file_mru file_rec bookmark buffer_tab<CR>
+nnoremap <silent> [unite_c]<C-d>  :<C-u>UniteWithInputDirectory -buffer-name=files file_rec bookmark<CR>
+nnoremap <silent> [unite_c]<C-g>  :<C-u>Unite -buffer-name=files file_rec bookmark<CR>
 nnoremap <silent> [unite_c]<C-b>  :<C-u>Unite -buffer-name=files buffer_tab file_mru<CR>
 nnoremap <silent> [unite_c]<C-t>  :<C-u>Unite -buffer-name=files tab buffer file_mru<CR>
 nnoremap <silent> [unite_c]<C-r>  :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> [unite_c]<C-o>  :<C-u>Unite -buffer-name=files outline buffer_tab file_mru<CR>
 nnoremap <silent> [unite_c]<C-p>  :<C-u>Unite -buffer-name=perldoc ref/perldoc<CR>
 nnoremap <silent> [unite_c]<C-s>  :<C-u>Unite -buffer-name=source   source<CR>
+nnoremap <silent> [unite_c]<C-h>  :<C-u>Unite -buffer-name=help help<CR>
 
 let g:unite_source_file_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(o|exe|dll|bak|sw[po]\)$\|\%(^\|/\)blib\%($\|/\)'
 let g:unite_source_file_rec_ignore_pattern = '\%(^\|/\)\.$\|\~$\|\.\%(o|exe|dll|bak|sw[po]\)$\|\%(^\|/\)blib\%($\|/\)\|\%(^\|/\)blib\%($\|/\)'
 let g:unite_source_file_mru_ignore_pattern = '\~$\|\.\%(o|exe|dll|bak|sw[po]\)$\|\%(^\|/\)\.\%(hg\|git\|bzr\|svn\)\%($\|/\)\|^\%(\\\\\|/mnt/\|/media/\|/Volumes/\)\|\%(^\|/\)blib\%($\|/\)'
+
 let g:unite_source_file_mru_limit = 200
+let g:unite_source_file_rec_max_depth = 10
 let g:unite_enable_start_insert = 1
 
 " ウィンドウを分割して開く
@@ -245,8 +250,11 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-s> unite#do_action('split
 au FileType unite nnoremap <silent> <buffer> <expr> <C-v> unite#do_action('vsplit')
 au FileType unite inoremap <silent> <buffer> <expr> <C-v> unite#do_action('vsplit')
 " タブで開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-c> unite#do_action('tabopen')
-au FileType unite inoremap <silent> <buffer> <expr> <C-c> unite#do_action('tabopen')
+au FileType unite nnoremap <silent> <buffer> <expr> <C-b> unite#do_action('tabopen')
+au FileType unite inoremap <silent> <buffer> <expr> <C-b> unite#do_action('tabopen')
+
+"更に下のディレクトリーをたどる
+au FileType unite inoremap <silent> <buffer> <expr> <C-r> unite#do_action('rec')
 
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
@@ -257,7 +265,7 @@ let g:neocomplcache_enable_camel_case_completion = 1
 " Use underbar completion.
 let g:neocomplcache_enable_underbar_completion = 1
 " Set minimum syntax keyword length.
-let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_min_syntax_length = 2
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 " Define dictionary.
