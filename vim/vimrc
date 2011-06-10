@@ -27,7 +27,6 @@ Bundle 'ref.vim'
 Bundle 'The-NERD-tree'
 Bundle 'neocomplcache'
 Bundle 'perlomni.vim'
-Bundle 'ZenCoding.vim'
 Bundle 'YankRing.vim'
 Bundle 'Gundo'
 Bundle 'unite-colorscheme'
@@ -44,6 +43,8 @@ Bundle 'Sixeight/unite-grep'
 Bundle 'h1mesuke/unite-outline'
 Bundle 'tsukkee/unite-help'
 Bundle 'othree/html5.vim'
+Bundle 'mattn/zencoding-vim'
+Bundle  'groenewege/vim-less'
 
 filetype plugin indent on
 syntax enable
