@@ -2,14 +2,13 @@ setup: $(HOME)/.zshenv \
 	   $(HOME)/.zshrc \
 	   $(HOME)/.zshrc_custom \
 	   $(HOME)/.gitconfig \
-	   $(HOME)/.screenrc \
 	   $(HOME)/.vimrc \
 	   $(HOME)/.vim \
 	   $(HOME)/.perltidyrc \
 	   $(HOME)/.module-setup \
 	   $(HOME)/.tmux.conf\
 	   $(HOME)/.vrapperrc\
-	   $(HOME)/.hgrc\
+	   byobu\
 
 
 $(HOME)/.zshenv:
@@ -45,5 +44,5 @@ $(HOME)/.tmux.conf:
 $(HOME)/.vrapperrc:
 	ln -sf `pwd`/vrapper/vrapperrc $(HOME)/.vrapperrc
 
-$(HOME)/.hgrc:
-	ln -sf `pwd`/hg/hgrc $(HOME)/.hgrc
+byobu:
+	ln -sf `pwd`/byobu $(HOME)/.byobu
