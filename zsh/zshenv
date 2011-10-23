@@ -30,6 +30,7 @@ then
     export PATH="$LOCAL_PERLBIN:$PATH"
     export PATH="/sbin:$PATH"
     export PERL_CPANM_OPT="--local-lib=$HOME/project/CPAN/"
+    source $HOME/perl5/perlbrew/etc/bashrc
 fi
 
 if test $MF_DEV
