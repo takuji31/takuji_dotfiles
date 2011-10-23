@@ -29,7 +29,7 @@ _update_rprompt () {
 
 _update_rprompt
 
-if [ "$TERM" = "screen" ]; then
+if [ "$TERM" = "screen-256color-bce" ]; then
   preexec() {
     local -a cmd; cmd=(${(z)2})
     if test "$cmd[1]" = "s"
