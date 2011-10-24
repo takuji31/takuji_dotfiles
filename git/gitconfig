@@ -23,3 +23,5 @@
 [user]
 	name = Nishibayashi Takuji
 	email = takuji@senchan.jp
+[redmine]
+	apiKey = b378df314ceb17cc14a34e57f38986b45b1c1401
