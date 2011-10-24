@@ -9,6 +9,7 @@ setup: $(HOME)/.zshenv \
 	   $(HOME)/.tmux.conf\
 	   $(HOME)/.vrapperrc\
 	   $(HOME)/.byobu\
+	   $(HOME)/.screenrc\
 
 
 $(HOME)/.zshenv:
