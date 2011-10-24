@@ -8,6 +8,7 @@ setup: $(HOME)/.zshenv \
 	   $(HOME)/.module-setup \
 	   $(HOME)/.tmux.conf\
 	   $(HOME)/.vrapperrc\
+	   $(HOME)/.screenrc\
 	   byobu\
 
 
