@@ -8,7 +8,7 @@ setup: $(HOME)/.zshenv \
 	   $(HOME)/.module-setup \
 	   $(HOME)/.tmux.conf\
 	   $(HOME)/.vrapperrc\
-	   byobu\
+	   $(HOME)/.byobu\
 
 
 $(HOME)/.zshenv:
@@ -44,5 +44,5 @@ $(HOME)/.tmux.conf:
 $(HOME)/.vrapperrc:
 	ln -sf `pwd`/vrapper/vrapperrc $(HOME)/.vrapperrc
 
-byobu:
+$(HOME)/.byobu:
 	ln -sf `pwd`/byobu $(HOME)/.byobu
