@@ -1,7 +1,5 @@
 source /usr/share/byobu/keybindings/f-keys
+bindkey "^A"
 escape ^Tt
-register r "^t:source $HOME/.byobu/profile^M"		#     | Goes with F5 definition
-register t "^tA^aa^k^h"					#     | Goes with the F8 definition
-register d "^t:source /usr/share/byobu/keybindings/screen-escape-keys^M"
-register r "^t:source $HOME/.byobu/profile^M"
-register e "^t:source /usr/share/byobu/keybindings/f-keys^M"
+register x "^t"						#     | Goes with the F12 definition
+register x "^A"
