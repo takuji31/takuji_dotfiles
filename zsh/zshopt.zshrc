@@ -35,7 +35,7 @@ _cache_hosts=(`perl -ne  'if (/^([\w.-]+)/) {print "$1\n"}' ~/.ssh/known_hosts`)
 
 
 
-RPROMPT="%{${fg[red]}%}[ %~ ]%{${reset_color}%} "
+#RPROMPT="%{${fg[red]}%}[ %~ ]%{${reset_color}%} "
 case ${UID} in
 0)
     PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') %B%{${fg[red]}%}%/#%{${reset_color}%}%b "
