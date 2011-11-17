@@ -29,6 +29,7 @@ Bundle 'YankRing.vim'
 Bundle 'Gundo'
 Bundle 'unite-colorscheme'
 Bundle 'neco-look'
+Bundle 'dbext.vim'
 
 "colorscheme
 Bundle 'newspaper.vim'
