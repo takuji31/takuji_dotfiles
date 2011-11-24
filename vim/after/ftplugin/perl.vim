@@ -12,6 +12,9 @@ iabbrev subs, sub  {<CR>my ( $self,  ) = @_;<CR><CR>}<Up><Up><Up><End><Left><Lef
 iabbrev subc, sub  {<CR>my ( $class,  ) = @_;<CR><CR>}<Up><Up><Up><End><Left><Left><C-R>=Eatchar('\s')<CR>
 iabbrev subss, sub  {<CR>my $self = shift;<CR>}<Up><Up><End><Left><Left><C-R>=Eatchar('\s')<CR>
 iabbrev subcs, sub  {<CR>my $class = shift;<CR>}<Up><Up><End><Left><Left><C-R>=Eatchar('\s')<CR>
+iabbrev vc, state $validator = Data::Validator->new(<CR>)->with(qw(Method Croak));<CR>my ($class, $args) = $validator->validate(@_);<Up><Up><End><CR>
+iabbrev vs, state $validator = Data::Validator->new(<CR>)->with(qw(Method Croak));<CR>my ($self, $args) = $validator->validate(@_);<Up><Up><End><CR>
+iabbrev v, state $validator = Data::Validator->new(<CR>)->with(qw(Croak));<CR>my $args = $validator->validate(@_);<Up><Up><End><CR>
 
 " for sledge
 iabbrev r, $self->r-><C-R>=Eatchar('\s')<CR>
