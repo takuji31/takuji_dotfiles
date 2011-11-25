@@ -334,3 +334,9 @@ let g:neocomplcache_omni_patterns = {
             \ 'cpp'  :  '\%(\h\w*\|)\)\%(\.\|->\)\h\w*\|\h\w*::',
             \ }
 
+
+"ダイナミック補完要らないんだけど無効にする方法見つからなかったからとりあえずごまかす
+let g:dbext_default_profile_mysql = "type=MYSQL:user=root:dbname=mysql"
+let g:dbext_default_profile = "mysql"
+"SQLComplete.vimが矢印キーで入力ぶっ壊すクソ仕様なのでマップしないようにする
+let g:omni_sql_no_default_maps = 1
