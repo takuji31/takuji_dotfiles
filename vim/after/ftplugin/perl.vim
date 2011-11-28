@@ -1,27 +1,5 @@
 set dictionary+=~/.vim/dict/perl.dict
 
-iabbrev self, my ($self, ) = @_;<Left><Left><Left><Left><Left><Left><Left><C-R>=Eatchar('\s')<CR>
-iabbrev selfs, my $self = shift;<CR><C-R>=Eatchar('\s')<CR>
-iabbrev class, my ($class, ) = @_;<Left><Left><Left><Left><Left><Left><Left><C-R>=Eatchar('\s')<CR>
-iabbrev classs, my $class = shift;<CR><C-R>=Eatchar('\s')<CR>
-iabbrev pkg, package ;<CR>use strict;<CR>use warnings;<Up><Up><End><Left>
-iabbrev strict, use strict;<CR>use warnings;<CR><C-R>=Eatchar('\s')<CR>
-iabbrev import, sub import {<CR>my $class  = shift;<CR>my $caller = caller;<CR>}<Up><End><CR><C-R>=Eatchar('\s')<CR>
-iabbrev sub, sub  {<CR><CR>}<Up><Up><End><Left><Left><C-R>=Eatchar('\s')<CR>
-iabbrev subs, sub  {<CR>my ( $self,  ) = @_;<CR><CR>}<Up><Up><Up><End><Left><Left><C-R>=Eatchar('\s')<CR>
-iabbrev subc, sub  {<CR>my ( $class,  ) = @_;<CR><CR>}<Up><Up><Up><End><Left><Left><C-R>=Eatchar('\s')<CR>
-iabbrev subss, sub  {<CR>my $self = shift;<CR>}<Up><Up><End><Left><Left><C-R>=Eatchar('\s')<CR>
-iabbrev subcs, sub  {<CR>my $class = shift;<CR>}<Up><Up><End><Left><Left><C-R>=Eatchar('\s')<CR>
-iabbrev vc, state $validator = Data::Validator->new(<CR>)->with(qw(Method));<CR>my ($class, $args) = $validator->validate(@_);<Up><Up><End><CR><C-R>=Eatchar('\s')<CR>
-iabbrev vs, state $validator = Data::Validator->new(<CR>)->with(qw(Method));<CR>my ($self, $args) = $validator->validate(@_);<Up><Up><End><CR><C-R>=Eatchar('\s')<CR>
-iabbrev v, state $validator = Data::Validator->new(<CR>);<CR>my $args = $validator->validate(@_);<Up><Up><End><CR><C-R>=Eatchar('\s')<CR>
-
-" for sledge
-iabbrev r, $self->r-><C-R>=Eatchar('\s')<CR>
-iabbrev rd, return $self->redirect("")<Left><Left><C-R>=Eatchar('\s')<CR>
-iabbrev rp, $self->r->param("")<Left><Left><C-R>=Eatchar('\s')<CR>
-iabbrev st, $self->stash->{}<Left><C-R>=Eatchar('\s')<CR>
-
 " for container
 iabbrev ct, container('')<Left><Left><C-R>=Eatchar('\s')<CR>
 iabbrev ctc, container('conf')-><C-R>=Eatchar('\s')<CR>
@@ -34,5 +12,3 @@ iabbrev ctca, container('cache')-><C-R>=Eatchar('\s')<CR>
 iabbrev ctck, container('cache_key')-><C-R>=Eatchar('\s')<CR>
 iabbrev ctdt, container('dt')-><C-R>=Eatchar('\s')<CR>
 
-" testing
-iabbrev subtest, subtest "" => sub {<CR><CR>done_testing;<CR>};<Up><Up><Up><Home><Right><Right><Right><Right><Right><Right><Right><Right><Right><C-R>=Eatchar('\s')<CR>
