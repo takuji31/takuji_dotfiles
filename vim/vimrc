@@ -297,3 +297,13 @@ let g:dbext_default_profile_mysql = "type=MYSQL:user=root:dbname=mysql"
 let g:dbext_default_profile = "mysql"
 "SQLComplete.vimが矢印キーで入力ぶっ壊すクソ仕様なのでマップしないようにする
 let g:omni_sql_no_default_maps = 1
+
+
+" -------------------------------------------------------------------------------------
+" vimfiler
+" -------------------------------------------------------------------------------------
+let g:vimfiler_as_default_explorer = 1
+let g:vimfiler_split_rule = "botright"
+
+nnoremap ff :<C-u>VimFilerSplit -simple<CR>
+nnoremap fe :<C-u>VimFilerTab -simple<CR>
