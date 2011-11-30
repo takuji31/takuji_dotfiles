@@ -10,19 +10,6 @@ filetype off                   " required!
 set rtp+=~/.vim/vundle.git/ 
 call vundle#rc()
 
-" My Bundles here:
-"
-" original repos on github
-"Bundle 'tpope/vim-fugitive'
-"Bundle 'lokaltog/vim-easymotion'
-"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-"" vim-scripts repos
-"Bundle 'L9'
-"Bundle 'FuzzyFinder'
-"Bundle 'rails.vim'
-"" non github repos
-"Bundle 'git://git.wincent.com/command-t.git'
-"" ...
 Bundle 'ref.vim'
 Bundle 'The-NERD-tree'
 Bundle 'YankRing.vim'
