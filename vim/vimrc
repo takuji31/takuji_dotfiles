@@ -35,6 +35,7 @@ Bundle 'h1mesuke/unite-outline'
 Bundle 'tsukkee/unite-help'
 Bundle 'mattn/zencoding-vim'
 Bundle 'groenewege/vim-less'
+Bundle 'vim-jp/vimdoc-ja'
 
 filetype plugin indent on
 syntax enable
