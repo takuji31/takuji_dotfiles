@@ -28,3 +28,4 @@ alias vi="vim"
 alias q="exit"
 alias sudo="sudo "
 alias zmv='noglob zmv -W'
+alias v='DIR=`pwd`;screen vim ../`basename $DIR`'
