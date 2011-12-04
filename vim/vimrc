@@ -36,6 +36,7 @@ Bundle 'tsukkee/unite-help'
 Bundle 'mattn/zencoding-vim'
 Bundle 'groenewege/vim-less'
 Bundle 'vim-jp/vimdoc-ja'
+Bundle 'tyru/eskk.vim'
 
 filetype plugin indent on
 syntax enable
@@ -310,3 +311,10 @@ let g:vimfiler_safe_mode_by_default = 0
 
 nnoremap ff :<C-u>VimFilerSplit -simple<CR>
 nnoremap fe :<C-u>VimFilerTab -simple<CR>
+
+" -------------------------------------------------------------------------------------
+" eskk
+" -------------------------------------------------------------------------------------
+let g:eskk#directory = "~/.skk"
+let g:eskk#dictionary = { 'path': "~/.skk-jisyo", 'sorted': 0, 'encoding': 'utf-8', }
+let g:eskk#large_dictionary = { 'path': "~/.skk/SKK-JISYO.L", 'sorted': 1, 'encoding': 'euc-jp', }
