@@ -8,7 +8,7 @@
 #vbell off
 
 # ほっとくとついつい増やしすぎちゃうので0-9で飛べるように数を制限する
-maxwin 10
+#maxwin 10
 
 # status line
 #hardstatus ignore "%w | %h"
