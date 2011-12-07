@@ -309,8 +309,8 @@ let g:vimfiler_split_action = "vsplit"
 let g:vimfiler_edit_action = "tabopen"
 let g:vimfiler_safe_mode_by_default = 0
 
-nnoremap ff :<C-u>VimFilerSplit -simple<CR>
-nnoremap fe :<C-u>VimFilerTab -simple<CR>
+nnoremap ff :<C-u>VimFilerTab<CR>
+nnoremap fe :<C-u>VimFiler<CR>
 
 " -------------------------------------------------------------------------------------
 " eskk
