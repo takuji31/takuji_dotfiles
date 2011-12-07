@@ -10,6 +10,7 @@ setup: $(HOME)/.zshenv \
 	   $(HOME)/.vrapperrc\
 	   $(HOME)/.byobu\
 	   $(HOME)/.screenrc\
+	   $(HOME)/.skk\
 
 
 $(HOME)/.zshenv:
@@ -47,3 +48,6 @@ $(HOME)/.vrapperrc:
 
 $(HOME)/.byobu:
 	ln -sf `pwd`/byobu $(HOME)/.byobu
+
+$(HOME)/.skk:
+	ln -sf `pwd`/skk $(HOME)/.skk
