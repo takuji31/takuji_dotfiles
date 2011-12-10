@@ -21,6 +21,7 @@ Bundle 'dbext.vim'
 Bundle 'newspaper.vim'
 Bundle 'pyte'
 
+Bundle 'takuji31/perlomni.vim'
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/vimfiler'
