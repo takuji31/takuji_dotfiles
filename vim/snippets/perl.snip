@@ -19,7 +19,7 @@ snippet     ps14
 	${0}
 
 snippet     pkg
-	package ${1};
+	package `MakePackageName()`;
 	use strict;
 	use warnings;
 	use 5.010000;
@@ -27,7 +27,7 @@ snippet     pkg
 	1;
 
 snippet     pkg12
-	package ${1};
+	package `MakePackageName()`;
 	use 5.012001;
 	use warnings;
 	${2}
@@ -37,7 +37,7 @@ snippet     pkg12
 snippet     pkg14
 	use 5.014001;
 	use warnings;
-	package ${1} {
+	package `MakePackageName()` {
 		${2}
 	}
 	1;

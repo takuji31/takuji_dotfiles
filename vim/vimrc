@@ -125,6 +125,13 @@ func! Eatchar(pat)
   return (c =~ a:pat) ? '' : c
 endfunc
 
+"パス名からいいようにパッケージ名作ってくれる関数、PerlのSnippetで使ってるよ
+func! MakePackageName()
+  let path = substitute(expand("%:p"),"\\","/","g")
+  let str  = substitute(path , '.\+lib/\(.\+\)\.pm','\1', "")
+  return substitute(str, "/", "::", "g") || "${0}"
+endfunc
+
 " for ftplugin/changelog.vim
 let g:changelog_timeformat = "%Y-%m-%d %H:%M:%S"
 let g:changelog_username = "Nishibayashi Takuji"
