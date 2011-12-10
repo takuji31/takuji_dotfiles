@@ -305,8 +305,8 @@ let g:omni_sql_no_default_maps = 1
 " -------------------------------------------------------------------------------------
 let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_split_rule = "botright"
-let g:vimfiler_split_action = "vsplit"
-let g:vimfiler_edit_action = "open"
+"let g:vimfiler_split_action = "vsplit"
+"let g:vimfiler_edit_action = "open"
 let g:vimfiler_safe_mode_by_default = 0
 
 nnoremap ff :<C-u>VimFilerTab<CR>
