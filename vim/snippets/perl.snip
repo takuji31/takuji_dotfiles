@@ -3,18 +3,18 @@ snippet     pscript
 	#!/usr/bin/env perl
 	use strict;
 	use warnings;
-	use 5.10.0;
+	use 5.010000;
 	${0}
 
 snippet     ps12
 	#!/usr/bin/env perl
-	use 5.12.0;
+	use 5.012001;
 	use warnings;
 	${0}
 
 snippet     ps14
 	#!/usr/bin/env perl
-	use 5.14.0;
+	use 5.014001;
 	use warnings;
 	${0}
 
@@ -22,20 +22,20 @@ snippet     pkg
 	package ${1};
 	use strict;
 	use warnings;
-	use 5.10.0;
+	use 5.010000;
 	${2}
 	1;
 
 snippet     pkg12
 	package ${1};
-	use 5.12.0;
+	use 5.012001;
 	use warnings;
 	${2}
 	1;
 
 
 snippet     pkg14
-	use 5.14.0;
+	use 5.014001;
 	use warnings;
 	package ${1} {
 		${2}
@@ -45,25 +45,24 @@ snippet     pkg14
 snippet     strict
 	use strict;
 	use warnings;
-	use 5.10.0;
+	use 5.010000;
 	${0}
 
 snippet     str12
-	use 5.12.0;
+	use 5.012001;
 	use warnings;
 	${0}
 
 snippet     str14
-	use 5.14.0;
+	use 5.014001;
 	use warnings;
 	${0}
 
 snippet     lmy
-	my ($${1:class}, ${2}) = @_;${0}
-	${0}
+	my ($${1:class}, ${2}) = ${3:@_};${0}
 
 snippet     smy
-	my $${1:class} = shift;
+	my $${1:self} = shift;
 	${0}
 
 snippet     sub
@@ -156,6 +155,7 @@ snippet     test
 	use warnings;
 	use Test::More;
 	${0}
+	done_testing;
 
 snippet     testutil
 	use strict;
@@ -163,6 +163,7 @@ snippet     testutil
 	use Test::More;
 	use t::Util;
 	${0}
+	done_testing;
 
 snippet     testfull
 	use strict;
@@ -171,9 +172,9 @@ snippet     testfull
 	use Test::Exception;
 	use t::Util;
 	${0}
+	done_testing;
 
 snippet     subtest
 	subtest "${1}" => sub {
 		${2}
-		done_testing;
 	};
