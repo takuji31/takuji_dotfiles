@@ -129,8 +129,8 @@ endfunc
 "パス名からいいようにパッケージ名作ってくれる関数、PerlのSnippetで使ってるよ
 func! MakePackageName()
   let path = substitute(expand("%:p"),"\\","/","g")
-  let str  = substitute(path , '.\+lib/\(.\+\)\.pm','\1', "")
-  return substitute(str, "/", "::", "g") || "${0}"
+  let str  = substitute(path , '.*lib/\(.\+\)\.pm','\1', "")
+  return substitute(str, "/", "::", "g")
 endfunc
 
 " for ftplugin/changelog.vim
