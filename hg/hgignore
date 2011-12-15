@@ -1,6 +1,0 @@
-syntax: glob
-*.o
-*.swp
-.DS_Store
-*.bak
-.svn/
