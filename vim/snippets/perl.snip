@@ -178,3 +178,33 @@ snippet     subtest
 	subtest "${1}" => sub {
 		${2}
 	};
+
+#For Amon2
+snippet     any
+	any '${1}' => sub {
+		my $c = shift;
+		${0}
+		$c->render('${2}');
+	};
+
+snippet     get
+	get '${1}' => sub {
+		my $c = shift;
+		${0}
+		$c->render('${2}');
+	};
+
+snippet     post
+	post '${1}' => sub {
+		my $c = shift;
+		${0}
+		$c->render('${2}');
+	};
+
+snippet     many
+	any => [qw/${1}/] => '${2}' => sub {
+		my $c = shift;
+		${0}
+		$c->render('${2}');
+	};
+
