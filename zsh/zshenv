@@ -40,7 +40,7 @@ then
     LOCAL_PERLBIN="$HOME/perl5/bin"
     PATH=${PATH//$LOCAL_PERLBIN:/}
     export PATH="$LOCAL_PERLBIN:$PATH"
-    LOCAL_PERL5LIB="$HOME/perl5"
+    LOCAL_PERL5LIB="$HOME/perl5/lib/perl5"
     export PERL5LIB="$LOCAL_PERL5LIB:$PERL5LIB"
 fi
 # git拡張
