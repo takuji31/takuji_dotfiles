@@ -3,18 +3,18 @@ snippet     pscript
 	#!/usr/bin/env perl
 	use strict;
 	use warnings;
-	use 5.010000;
+	use 5.010_000;
 	${0}
 
 snippet     ps12
 	#!/usr/bin/env perl
-	use 5.012001;
+	use 5.012_001;
 	use warnings;
 	${0}
 
 snippet     ps14
 	#!/usr/bin/env perl
-	use 5.014001;
+	use 5.014_001;
 	use warnings;
 	${0}
 
@@ -22,39 +22,39 @@ snippet     pkg
 	package `MakePackageName()`;
 	use strict;
 	use warnings;
-	use 5.010000;
-	${2}
+	use 5.010_000;
+	${0}
 	1;
 
 snippet     pkg12
 	package `MakePackageName()`;
-	use 5.012001;
+	use 5.012_001;
 	use warnings;
-	${2}
+	${0}
 	1;
 
 
 snippet     pkg14
-	use 5.014001;
+	use 5.014_001;
 	use warnings;
 	package `MakePackageName()` {
-		${2}
+		${0}
 	}
 	1;
 
 snippet     strict
 	use strict;
 	use warnings;
-	use 5.010000;
+	use 5.010_000;
 	${0}
 
 snippet     str12
-	use 5.012001;
+	use 5.012_001;
 	use warnings;
 	${0}
 
 snippet     str14
-	use 5.014001;
+	use 5.014_001;
 	use warnings;
 	${0}
 
@@ -144,8 +144,10 @@ snippet     on
 	on ${1} => sub {
 		my $self = shift;
 		${2}
-	}
+	};
 
+snippet     ns
+	`MakePackageName()`${0}
 #For container
 #TODO 書く
 
@@ -153,6 +155,7 @@ snippet     on
 snippet     test
 	use strict;
 	use warnings;
+	use utf8;
 	use Test::More;
 	${0}
 	done_testing;
@@ -160,6 +163,7 @@ snippet     test
 snippet     testutil
 	use strict;
 	use warnings;
+	use utf8;
 	use Test::More;
 	use t::Util;
 	${0}
@@ -168,6 +172,7 @@ snippet     testutil
 snippet     testfull
 	use strict;
 	use warnings;
+	use utf8;
 	use Test::More;
 	use Test::Exception;
 	use t::Util;
@@ -178,6 +183,11 @@ snippet     subtest
 	subtest "${1}" => sub {
 		${2}
 	};
+
+snippet     tservice
+	t::Util->test_service(sub {
+		${0}
+	});
 
 #For Amon2
 snippet     any
