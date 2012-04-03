@@ -11,6 +11,7 @@ setup: $(HOME)/.zshenv \
 	   $(HOME)/.byobu\
 	   $(HOME)/.screenrc\
 	   $(HOME)/.skk\
+	   $(HOME)/.emacs.d\
 
 
 $(HOME)/.zshenv:
@@ -51,3 +52,6 @@ $(HOME)/.byobu:
 
 $(HOME)/.skk:
 	ln -sf `pwd`/skk $(HOME)/.skk
+
+$(HOME)/.emacs.d:
+	ln -sf `pwd`/emacs $(HOME)/.emacs.d

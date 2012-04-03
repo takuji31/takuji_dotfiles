@@ -36,6 +36,16 @@ if test -e $HOME/perl5/perlbrew/etc/bashrc
 then
     source $HOME/perl5/perlbrew/etc/bashrc
 fi
+if test -e $HOME/.nodebrew/current/bin
+then
+    export PATH=$HOME/.nodebrew/current/bin:$PATH
+fi
+if test -e /usr/local/bin/vim
+then
+    export EDITOR=/usr/local/bin/vim
+else
+    export EDITOR=vim
+fi
 if test $MF_DEV
 then
     #なんか実験的にモジュール入れたい時用
