@@ -14,8 +14,8 @@ fi
 
 export MYSQL_PS1='\u@\h:\d>\_'
 
-export EDITOR=vim
-export PAGER="$SYSTEM_PREFIX/bin/lv -c"
+export PAGER="lv -c"
+#export PAGER="$SYSTEM_PREFIX/bin/lv -c"
 export EMAIL=takuji@senchan.jp
 export MYCHANGELOG_MEMO=$HOME/ChangeLog
 
