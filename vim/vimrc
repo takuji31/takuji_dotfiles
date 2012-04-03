@@ -37,7 +37,6 @@ Bundle 'tsukkee/unite-help'
 Bundle 'mattn/zencoding-vim'
 Bundle 'groenewege/vim-less'
 Bundle 'vim-jp/vimdoc-ja'
-Bundle 'tyru/eskk.vim'
 
 filetype plugin indent on
 syntax enable
