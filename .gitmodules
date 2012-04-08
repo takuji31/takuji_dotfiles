@@ -22,3 +22,9 @@
 [submodule "vim/vundle.git"]
 	path = vim/vundle.git
 	url = git://github.com/gmarik/vundle.git
+[submodule "emacs/repos/color-theme-wombat"]
+	path = emacs/repos/color-theme-wombat
+	url = git://github.com/demizer/color-theme-wombat.git
+[submodule "emacs/repos/perl-completion"]
+	path = emacs/repos/perl-completion
+	url = git://github.com/imakado/perl-completion.git
