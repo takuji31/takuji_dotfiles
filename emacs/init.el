@@ -1,8 +1,4 @@
-
-
 ;; ロードするディレクトリを設定する関数
-(when (> emacs-major-version 23)
-  (defvar user-emacs-directory "~/.emacs.d"))
 (defun add-to-load-path (&rest paths)
   (let (path)
     (dolist (path paths paths)
