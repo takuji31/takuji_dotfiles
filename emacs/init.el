@@ -12,6 +12,7 @@
 (require 'init-loader)
 (init-loader-load "~/.emacs.d/conf")
 
+
 ;;ELPA
 (when (require 'package nil t)
   ;;パッケージリポジトリの設定
@@ -185,6 +186,9 @@
       cperl-close-paren-offset -4
       cperl-tab-always-indent t
       cperl-highlight-variables-indiscriminately t)
+;;PSGIとテストファイルはcperl-modeで開く
+(setq auto-mode-alist (append '(("\\.psgi$" . cperl-mode)) auto-mode-alist))
+(setq auto-mode-alist (append '(("\\.t$" . cperl-mode)) auto-mode-alist))
 
 ;;yaml-mode
 (when (require 'yaml-mode nil t)
