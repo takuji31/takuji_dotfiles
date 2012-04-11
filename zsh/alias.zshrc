@@ -4,6 +4,7 @@ alias spec='spec -c -Du -fs'
 case "${OSTYPE}" in
 freebsd*|darwin*)
     alias ls="ls -G -w"
+    alias emacs='TERM=xterm-256color /Applications/Emacs.app/Contents/MacOS/Emacs -nw'
     ;;
 linux*)
     alias ls="ls --color"
