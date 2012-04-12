@@ -20,6 +20,13 @@
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 (setq uniquify-ignore-buffers-re "*[^*]+*")
 
+;; バッファ切り替え強化
+(iswitchb-mode 1)
+(setq read-buffer-function 'iswitchb-read-buffer)
+;; 正規表現を使えるように
+(setq iswitchb-regexp t)
+;; バッファー作成時に確認をしない
+(setq iswitchb-prompt-newbuffer nil)
 
 ;;ELPA
 (when (require 'package nil t)
