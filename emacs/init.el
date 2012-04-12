@@ -95,8 +95,10 @@
   (color-theme-initialize)
   (when (require 'color-theme-wombat nil t)
     (color-theme-wombat)))
+
 ;;ハイライト
 (global-hl-line-mode t)
+(set-face-background 'hl-line "darkolivegreen")
 
 ;;括弧の強調表示
 (setq show-paren-delay 0)
