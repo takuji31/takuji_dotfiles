@@ -15,6 +15,11 @@
 ;; find-file-at-point
 (ffap-bindings)
 
+;; ファイル名がかぶった場合にバッファ名をわかりやすくする
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+(setq uniquify-ignore-buffers-re "*[^*]+*")
+
 
 ;;ELPA
 (when (require 'package nil t)
