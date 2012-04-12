@@ -12,6 +12,9 @@
 (require 'init-loader)
 (init-loader-load "~/.emacs.d/conf")
 
+;; PATHの設定に/usr/local/binを追加してやる
+(add-to-list 'exec-path "/usr/local/bin")
+
 ;; find-file-at-point
 (ffap-bindings)
 
