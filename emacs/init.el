@@ -12,6 +12,21 @@
 (require 'init-loader)
 (init-loader-load "~/.emacs.d/conf")
 
+;; find-file-at-point
+(ffap-bindings)
+
+;; ファイル名がかぶった場合にバッファ名をわかりやすくする
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+(setq uniquify-ignore-buffers-re "*[^*]+*")
+
+;; バッファ切り替え強化
+(iswitchb-mode 1)
+(setq read-buffer-function 'iswitchb-read-buffer)
+;; 正規表現を使えるように
+(setq iswitchb-regexp t)
+;; バッファー作成時に確認をしない
+(setq iswitchb-prompt-newbuffer nil)
 
 ;;ELPA
 (when (require 'package nil t)
@@ -92,8 +107,10 @@
   (color-theme-initialize)
   (when (require 'color-theme-wombat nil t)
     (color-theme-wombat)))
+
 ;;ハイライト
 (global-hl-line-mode t)
+(set-face-background 'hl-line "darkolivegreen")
 
 ;;括弧の強調表示
 (setq show-paren-delay 0)
