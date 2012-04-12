@@ -12,6 +12,9 @@
 (require 'init-loader)
 (init-loader-load "~/.emacs.d/conf")
 
+;; find-file-at-point
+(ffap-bindings)
+
 
 ;;ELPA
 (when (require 'package nil t)
