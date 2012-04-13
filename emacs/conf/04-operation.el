@@ -39,5 +39,13 @@
 (cua-mode t)
 (setq cua-enable-cua-keys nil)
 
+;; yasnippet
 (require 'yasnippet-config)
 (yas/setup "~/.emacs.d/elisp/yasnippet")
+
+;; viewer.el
+(require 'viewer)
+(viewer-stay-in-setup)
+(setq viewer-modeline-color-unwritable "tomato")
+(setq viewer-modeline-color-view "orange")
+(viewer-change-modeline-color-setup)
