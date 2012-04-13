@@ -27,6 +27,11 @@
   (global-set-key (kbd "M-[") 'point-undo)
   (global-set-key (kbd "M-]") 'point-redo))
 
+;; goto-chg
+(require 'goto-chg)
+(global-set-key (kbd "<f8>") 'goto-last-change)
+(global-set-key (kbd "S-<f8>") 'goto-last-change-reverse)
+
 ;;1行目がシェバングなら実行権限つけて保存
 (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 
