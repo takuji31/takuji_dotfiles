@@ -38,3 +38,6 @@
 ;; CUAモードON
 (cua-mode t)
 (setq cua-enable-cua-keys nil)
+
+(require 'yasnippet-config)
+(yas/setup "~/.emacs.d/elisp/yasnippet")
