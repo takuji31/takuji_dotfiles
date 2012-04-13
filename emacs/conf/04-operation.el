@@ -35,3 +35,6 @@
 ;;1行目がシェバングなら実行権限つけて保存
 (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 
+;; CUAモードON
+(cua-mode t)
+(setq cua-enable-cua-keys nil)
