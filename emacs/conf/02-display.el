@@ -43,3 +43,7 @@
 (set-face-background 'show-paren-match-face nil)
 (set-face-underline-p 'show-paren-match-face "yellow")
 
+;; 現在桁のハイライト
+(require 'col-highlight)
+(toggle-highlight-column-when-idle 1)
+(col-highlight-set-interval 6)
