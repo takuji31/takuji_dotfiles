@@ -1,9 +1,7 @@
 ;;eldoc
-(defun elisp-mode-hooks ()
-  "list-mode-hooks"
-  (when (require 'eldoc nil t)
-    (setq eldoc-idle-delay 0.2)
-    (setq eldoc-echo-area-use-multiline-p t)
-    (turn-on-eldoc-mode)))
-(add-hook 'emacs-lisp-mode-hook 'elisp-mode-hooks)
-
+(require 'eldoc-extension)
+(add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
+(setq eldoc-minor-mode-string "")
+(setq eldoc-idle-delay 0.2)
