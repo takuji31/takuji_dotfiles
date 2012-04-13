@@ -5,3 +5,5 @@
 (add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
 (setq eldoc-minor-mode-string "")
 (setq eldoc-idle-delay 0.2)
+
+(require 'lispxmp)
