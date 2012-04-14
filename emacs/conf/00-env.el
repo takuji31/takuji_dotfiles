@@ -14,3 +14,6 @@
 
 ;; 音がうるさい
 (setq ring-bell-function (lambda () (message "ding ding!")))
+
+;; バックアップを残さない
+(setq make-backup-files nil)
