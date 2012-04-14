@@ -11,3 +11,6 @@
 (when (eq system-type 'w32)
   (set-file-name-coding-system 'cp932)
   (setq locale-coding-system 'cp932))
+
+;; 音がうるさい
+(setq ring-bell-function (lambda () (message "ding ding!")))
