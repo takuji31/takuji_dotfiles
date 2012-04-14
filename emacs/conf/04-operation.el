@@ -41,3 +41,6 @@
 (setq viewer-modeline-color-unwritable "tomato")
 (setq viewer-modeline-color-view "orange")
 (viewer-change-modeline-color-setup)
+
+;; yes or noをy or n
+(fset 'yes-or-no-p 'y-or-n-p)
