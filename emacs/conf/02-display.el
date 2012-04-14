@@ -42,6 +42,9 @@
 (setq show-paren-style 'expression)
 (set-face-background 'show-paren-match-face nil)
 (set-face-underline-p 'show-paren-match-face "yellow")
+;; 行末の空白を強調表示
+(setq-default show-trailing-whitespace t)
+(set-face-background 'trailing-whitespace "#b14770")
 
 ;; 現在桁のハイライト
 (require 'col-highlight)
