@@ -47,3 +47,8 @@
 (require 'col-highlight)
 (toggle-highlight-column-when-idle 1)
 (col-highlight-set-interval 6)
+
+
+;; ブロック折りたたみ
+(require 'hideshow)
+(require 'fold-dwim)
