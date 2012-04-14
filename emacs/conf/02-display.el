@@ -61,3 +61,7 @@
 
 ;; scratchの初期メッセージ消去
 (setq initial-scratch-message "")
+
+;; tabbar
+(require 'tabbar)
+(tabbar-mode 1)
