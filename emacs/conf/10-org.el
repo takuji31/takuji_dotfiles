@@ -11,3 +11,11 @@
     (16 (org-insert-upheading nil))
     (t  (org-insert-heading nil))))
 (define-key org-mode-map (kbd "<C-return>") 'org-insert-heading-dwim)
+
+(org-remember-insinuate)                ;org-remeneberの初期化
+(setq org-directory "~/memo/")
+(setq org-default-notes-file (expand-file-name "memo.org" org-directory))
+;; テンプレート
+(setq org-remember-templates
+      '(("Note" ?n "** %?\n    %i\n    %a\n    %t" nil "Inbox")
+        ("Todo" ?t "** TODO %?\n    %i\n    %a\n    %t" nil "Inbox")))
