@@ -9,3 +9,5 @@
 
 (require 'ipa)
 
+(require 'multi-term)
+(setq multi-term-program "/usr/local/bin/zsh")
